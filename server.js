@@ -6,15 +6,13 @@ const PORT = process.env.PORT || 3000;
 
 let ranking = [];
 
-app.use(cors()); // ¡Habilita CORS!
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
-// Ruta GET para ver el ranking
 app.get('/api/ranking', (req, res) => {
   res.json(ranking);
 });
 
-// Ruta POST para guardar una nueva partida
 app.post('/api/ranking', (req, res) => {
   const nuevaPartida = req.body;
 
@@ -25,7 +23,6 @@ app.post('/api/ranking', (req, res) => {
   res.status(201).json({ mensaje: 'Partida guardada' });
 });
 
-// Iniciar el servidor
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });

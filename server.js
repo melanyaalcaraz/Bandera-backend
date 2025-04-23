@@ -14,6 +14,7 @@ app.use(cors({
 
 app.use(express.json());
 
+
 app.get('/api/ranking', (req, res) => {
   res.json(ranking);
 });

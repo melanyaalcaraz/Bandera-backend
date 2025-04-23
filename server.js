@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 let ranking = [];
 
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: 'https://melanyaalcaraz.netlify.app' }));
 app.use(express.json());
 
 app.get('/api/ranking', (req, res) => {
